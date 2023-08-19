@@ -5,9 +5,335 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1>hello world</h1>
-    <p>hello world</p>
-    <p>hello peepo</p>
-</body>
+<body style="padding-top: 70px"><stayfocusd-info-bar></stayfocusd-info-bar>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="active navbar-brand" href="#home">TesseTrack</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#capabilities">Introduction</a></li>
+                    <li><a href="#results">Results</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron myBanner">
+            <a class="anchor" name="home"></a>
+            <h1>TesseTrack</h1>
+            <p>TesseTrack: End-to-End Learnable Multi-Person Articulated 3D Pose Tracking</p>
+            <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>-->
+        </div>
+        <hr>
+    </div>
+
+    <div class="container">
+        <div class="pager-header">
+            <a class="anchor" name="capabilities"></a>
+            <h1>TesseTrack</h1>
+
+
+
+  <div class="row">
+      <div class="col-md-10 col-xs-12 col-md-offset-1">
+          <p align="center">
+          <iframe width="900" height="515" src="https://www.youtube.com/embed/gpNwWwPfTAE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+      </p></div>
+  </div>
+
+
+            <p>We consider the task of 3D pose estimation and tracking of multiple people seen in an arbitrary number of camera feeds. We propose TesseTrack, a novel top-down approach that simultaneously reasons about multiple individuals’ 3D body joint reconstructions and associations in space and time in a single end-to-end learnable framework. At the core of our approach is a novel spatio-temporal formulation that operates in a common voxelized feature space aggregated from single- or multiple camera views. After a person detection step, a 4D CNN produces short-term person-specific representations which are then linked across time by a differentiable matcher. The linked descriptions are then merged and deconvolved into 3D poses. This joint spatio-temporal formulation contrasts with previous piece-wise strategies that treat 2D pose estimation, 2D-to-3D lifting, and 3D pose tracking as independent sub-problems that are error-prone when solved in isolation. Furthermore, unlike previous methods, TesseTrack is robust to changes in the number of camera views and achieves very good results even if a single view is available at inference time. Quantitative evaluation of 3D pose reconstruction accuracy on standard benchmarks shows significant improvements over the state of the art. Evaluation of multi-person articulated 3D pose tracking in our novel evaluation framework demonstrates the superiority of TesseTrack over strong baselines.
+          </p>
+
+        </div>
+  </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>Pipeline</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <p>The complete pipeline of tessetrack has been illustrated. Initially, the video feed from multiple cameras is passed through shared HRNet to compute the features required for detection and 3D pose tracking. The final layer of the HRNet is passed through a 3D convolution to regress to the center of the human 3D bounding boxes. Each of the hypotheses is combined with the HRNet final layer to create a spatio-temporal Tube called tesseract. We use a learnable 3D tracking framework for a person association over time using spatio-temporal person descriptors. Finally, the associated descriptors are passed through deconvolution layers to infer the 3D pose. Note that the framework is end-to-end trainable except for the NMS layer in the detection network.</p>
+            </div>
+            <div class="col-xs-12">
+              <img src="./images/pipeline_new.png" class="img-responsive" alt="Pipeline">
+            </div>
+        </div>
+        <hr>
+    </div>
+<!--
+   <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>Scene-Specific Clustering</h3>
+
+                <p>Comparison of different clustering methods. For each method, we show both the bird view and camera view.<br/>
+                AMKS 2D: Taking 2D bounding box center as trajectory points and directly clusters them using AMKS;<br/>
+                AMKS 3D: Using 3D vehicle trajectories acquired from our reconstruction method to perform AMKS;<br/>
+                Traffic4D: Our method performs scene-specific clustering and  can distinguish trajectories quite close on the 2D image.</p>
+            </div>
+      </div>
+
+      <div class="row">
+          <div class="col-xs-12">
+              <b>Seq 007</b>
+            </div>
+          <div class = "col-md-4 col-xs-12">
+              <p>AMKS 2D</p>
+              <img src="../images/clustering/00002_00005/00002_00005_AMKS_2d_proj.jpg" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+          <div class = "col-md-4 col-xs-12">
+              <p>AMKS 3D</p>
+              <img src="../images/clustering/00002_00005/00002_00005_AMKS_3d_proj.jpg" class="img-responsive" alt="Pipeline" width="720" height="450">
+            </div>
+          <div class = "col-md-4 col-xs-12">
+              <p>Traffic4D</p>
+              <img src="../images/clustering/00002_00005/00002_00005_ours_proj.jpg" class="img-responsive" alt="Pipeline" width="720" height="450">
+            </div>
+
+            <div class = "col-md-4 col-xs-12">
+              <img src="../images/clustering/00002_00005/00002_00005_AMKS_2d_bird.jpg" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+          <div class = "col-md-4 col-xs-12">
+              <img src="../images/clustering/00002_00005/00002_00005_AMKS_3d_bird.jpg" class="img-responsive" alt="Pipeline" width="720" height="450">
+            </div>
+          <div class = "col-md-4 col-xs-12">
+              <img src="../images/clustering/00002_00005/00002_00005_ours_bird.jpg" class="img-responsive" alt="Pipeline" width="720" height="450">
+            </div>
+      </div>
+      <hr>
+      <div class="row">
+          <div class="col-xs-12">
+              <b>Seq 008</b>
+            </div>
+
+            <div class = "col-md-4 col-xs-12">
+              <p>AMKS 2D</p>
+              <img src="../images/clustering/00005_00002/00005_00002_AMKS_2d_proj.jpg" class="img-responsive" alt="Pipeline" width="720" height="450">
+            </div>
+          <div class = "col-md-4 col-xs-12">
+              <p>AMKS 3D</p>
+              <img src="../images/clustering/00005_00002/00005_00002_AMKS_3d_proj.jpg" class="img-responsive" alt="Pipeline" width="720" height="450">
+            </div>
+          <div class = "col-md-4 col-xs-12">
+              <p>Traffic4D</p>
+              <img src="../images/clustering/00005_00002/00005_00002_ours_proj.jpg" class="img-responsive" alt="Pipeline" width="720" height="450">
+            </div>
+
+            <div class = "col-md-4 col-xs-12">
+              <img src="../images/clustering/00005_00002/00005_00002_AMKS_2d_bird.jpg" class="img-responsive" alt="Pipeline" width="720" height="450">
+            </div>
+          <div class = "col-md-4 col-xs-12">
+              <img src="../images/clustering/00005_00002/00005_00002_AMKS_3d_bird.jpg" class="img-responsive" alt="Pipeline" width="720" height="450">
+            </div>
+          <div class = "col-md-4 col-xs-12">
+              <img src="../images/clustering/00005_00002/00005_00002_ours_bird.jpg" class="img-responsive" alt="Pipeline" width="720" height="450">
+            </div>
+      </div>
+      <hr>
+  </div>
+
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-12">
+              <h3>2D Longitudinal Self-Supervision</h3>
+            </div>
+          <div class = "col-md-2 col-xs-12">
+              <img src="../images/longitudinal_2d/00029/used_density.png" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+          <div class = "col-md-2 col-xs-12">
+              <img src="../images/longitudinal_2d/00029/00029.png" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+          <div class = "col-md-2 col-xs-12">
+              <img src="../images/longitudinal_2d/00029/00029_refined.png" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+          <div class = "col-md-2 col-xs-12">
+              <img src="../images/longitudinal_2d/00072/used_density.png" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+          <div class = "col-md-2 col-xs-12">
+              <img src="../images/longitudinal_2d/00072/00072.png" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+          <div class = "col-md-2 col-xs-12">
+              <img src="../images/longitudinal_2d/00072/00072_refined.png" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+          <div class = "col-md-2 col-xs-12">
+              <img src="../images/longitudinal_2d/00029/experts2.png" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+          <div class = "col-md-2 col-xs-12">
+              <img src="../images/longitudinal_2d/00029/vehicles_init.png" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+          <div class = "col-md-2 col-xs-12">
+              <img src="../images/longitudinal_2d/00029/vehicles_refined.png" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+          <div class = "col-md-2 col-xs-12">
+              <img src="../images/longitudinal_2d/00072/experts2.png" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+          <div class = "col-md-2 col-xs-12">
+              <img src="../images/longitudinal_2d/00072/vehicles_init.png" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+          <div class = "col-md-2 col-xs-12">
+              <img src="../images/longitudinal_2d/00072/vehicles_refined.png" width="720" height="450" class="img-responsive" alt="Pipeline">
+            </div>
+      </div>
+  </div>
+
+<hr/>
+-->
+<div class="container">
+  <div class="pager-header">
+      <a class="anchor" name="results"></a>
+      <h1>Results</h1>
+      <p>We demonstrate our results on different datasets to demosntrate the robustness of the algorithm.</p>
+  </div>
+  <hr>
+</div>
+
+<div class="container">
+  <div class="row">
+
+      <div class="col-xs-12">
+          <h3>Haggling Sequence of Panoptic Dataset</h3>
+          <p>We show 3D pose tracking on haggling sequence of panoptic dataset.</p>
+          <a class="anchor" name="selfdrivingcars"></a>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-10 col-xs-12 col-md-offset-1">
+          <video width="100%" controls="" autoplay="" loop="" muted="">
+              <source src="./videos/panoptic_3.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  <hr>
+</div>
+
+<div class="container">
+  <div class="row">
+
+      
+      <div class="col-xs-12">
+          <h3>Pizza Sequence of Panoptic Dataset</h3>
+          <p>We show 3D pose tracking on Pizza sequence of panoptic dataset.</p>
+          <a class="anchor" name="selfdrivingcars"></a>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-10 col-xs-12 col-md-offset-1">
+          <video width="100%" controls="" autoplay="" loop="" muted="">
+              <source src="./videos/panoptic_7.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  <hr>
+</div>
+
+<div class="container">
+  <div class="row">
+
+      <div class="col-xs-12">
+          <h3>Monocular results on Panoptic dataset</h3>
+          <p>We show robustness of the Tessetrack algorithm with monocular input as well.</p>
+          <a class="anchor" name="selfdrivingcars"></a>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-10 col-xs-12 col-md-offset-1">
+          <video width="100%" controls="" autoplay="" loop="" muted="">
+              <source src="./videos/panoptic_mono.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  <hr>
+</div>
+
+<div class="container">
+  <div class="row">
+
+      <div class="col-xs-12">
+          <h3>Results on Tagging Sequence</h3>
+          <p>We show robustness to view changes. Observe that the tracking is accurate although the input videos are being captured by handheld cameras</p>
+          <a class="anchor" name="selfdrivingcars"></a>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-10 col-xs-12 col-md-offset-1">
+          <video width="100%" controls="" autoplay="" loop="" muted="">
+              <source src="./videos/tagging.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  <hr>
+</div>
+
+
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-xs-12">
+          <h3>More Details</h3>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-xs-12 col-sm-8">
+          <p>For an in-depth description of TesseTrack, please refer to our paper and the accompanying video.</p>
+
+          <p><i>"TesseTrack: End-to-End Learnable Multi-Person Articulated 3D Pose Tracking"</i>, </p>
+      <a href="https://www.cs.cmu.edu/~dnarapur/">N. Dinesh Reddy</a>, <a href="https://www.linkedin.com/in/laurent-guigues-77290b5/"> Laurent Guigues</a>, <a href="https://www.linkedin.com/in/leonid-pishchulin-a6b955b9/">Leonid Pischulini</a>, <a href="https://www.linkedin.com/in/jayan-eledath-6861192">Jayan Eledath</a>, and <a href="http://cs.cmu.edu/~srinvas">Srinivasa Narasimhan</a> <br>
+      IEEE Conference on Computer Vision and Pattern Recognition (CVPR)  2021. <br>
+      [<a href="http://www.cs.cmu.edu/~ILIM/projects/IM/TesseTrack/pdf/TesseTrack.pdf">PDF</a>][<a href="pdf/tessetrack_Poster.pdf">Poster</a>]  [<a href="pdf/TesseTrack_supp.pdf">Supp</a>] [<a href="pdf/tessetrack.bib">Bibtex</a>]<br>
+
+      </div>
+      <div class="col-xs-6 col-sm-4">
+          <a href="./pdf/TesseTrack.pdf" target="_blank"><img src="./images/paper_preview.jpeg" class="img-thumbnail img-responsive" alt="Link to paper"></a>
+      </div>
+  <hr>
+</div>
+
+
+<div class="col-xs-12" style="background-color:#202020">
+    <p></p><div align="right" style="color:white">Copyright</div><p></p>
+</div>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="./js/ie10-viewport-bug-workaround.js"></script>
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-99865999-1', 'auto');
+      ga('send', 'pageview');
+
+  </script>
+
+
+</div></body>
 </html>
