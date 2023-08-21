@@ -66,17 +66,6 @@ $(document).ready(function() {
 
     });
 
-    // window.onload = function() {
-
-    if (Math.random() < 0.5){
-      document.getElementById("author1").innerHTML='<a href="https://www.didacsuris.com">Dídac Surís</a><sup>*</sup>,</span>';
-      document.getElementById("author2").innerHTML='<a href="https://sachit-menon.github.io/">Sachit Menon</a><sup>*</sup>,</span>';
-    }else{
-      document.getElementById("author1").innerHTML='<a href="https://sachit-menon.github.io/">Sachit Menon</a><sup>*</sup>,</span>';
-      document.getElementById("author2").innerHTML='<a href="https://www.didacsuris.com">Dídac Surís</a><sup>*</sup>,</span>';
-      }
-    // }
-
 
     var options = {
 			slidesToScroll: 1,
