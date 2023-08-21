@@ -1,668 +1,671 @@
-<html class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head>
-    <meta charset="utf-8">
-    <meta name="description" content="TEMPO: Efficient Multi-View Pose Estimation, Tracking, and Forecasting">
-    <meta name="keywords" content="tempo, multi-view, pose estimation, 3D, tracking">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TEMPO: Efficient Multi-View Pose Estimation, Tracking, and Forecasting/title>
-  
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-  
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-  
-      gtag('js', new Date());
-  
-      gtag('config', 'G-PYVRSFMDRL');
-    </script>
-  
-    <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}</style><link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  
-    <link rel="stylesheet" href="./static/css/bulma.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./static/images/snake.svg">
-  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer="" src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
-  
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://unpkg.com/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  
-  
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8DFG5F09VJ"></script><script>
+<!DOCTYPE html><html><head>
+  <meta charset="utf-8">
+  <meta name="description" content="ViperGPT: Visual Inference via Python Execution for Reasoning.">
+  <meta name="keywords" content="viper, GPT, Codex, Python">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ViperGPT: Visual Inference via Python Execution for Reasoning</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
-  
-    gtag('config', 'G-8DFG5F09VJ');
-  </script></head>
-  <!-- Google tag (gtag.js) -->
-  
-  
-  
-  <body><stayfocusd-info-bar></stayfocusd-info-bar>
-  
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column has-text-centered">
-              <h1 class=" title is-1 publication-title"><span class="vipergpt">ViperGPT</span>: Visual Inference via Python Execution for Reasoning</h1>
-              <div class="is-size-3 publication-authors">
-                <span class="author-block" id="author1">Rohan Choudhury</a><sup>*</sup>,</span>
-                  <span class="author-block" id="author2"><a href="https://www.laszlojeni.com/">László A. Jeni</a><sup>*</sup>,</span>
-                    <span class="author-block">
-                      <a href=https://kriskitani.github.io/>Kris M. Kitani</a>
-                    </span>
-                  </div>
-                  <div class="is-size-3 publication-authors">
-                    <span class="author-block">Robotics Institute, Carnegie Mellon University</span>
-                  </div>
-  
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                      <!-- PDF Link. -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/2303.08128.pdf" class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <link rel="stylesheet" href="css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="css/bulma-slider.min.css">
+  <link rel="stylesheet" href="css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="css/academicons.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="fonts/snake.svg">
+
+  <script src="js/jquery.min.js"></script>
+  <script defer src="js/fontawesome.all.min.js"></script>
+  <script src="js/bulma-carousel.min.js"></script>
+  <script src="js/bulma-slider.min.js"></script>
+  <script src="js/index.js"></script>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8DFG5F09VJ"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8DFG5F09VJ');
+</script></head>
+<!-- Google tag (gtag.js) -->
+
+
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class=" title is-1 publication-title"><span class="vipergpt">ViperGPT</span>: Visual Inference via Python Execution for Reasoning</h1>
+            <div class="is-size-3 publication-authors">
+              <span class="author-block" id="author1">
+                <a href="https://www.didacsuris.com">Dídac Surís</a><sup>*</sup>,</span>
+                <span class="author-block" id="author2">
+                  <a href="https://sachit-menon.github.io/">Sachit Menon</a><sup>*</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://www.cs.columbia.edu/~vondrick/">Carl Vondrick</a>
+                  </span>
+                </div>
+
+                <div class="is-size-5 publication-equal">
+                  <span class="author-block"><sup>*</sup>Equal contribution</span>
+                </div>
+                <div class="is-size-3 publication-authors">
+                  <span class="author-block">Columbia University</span>
+                </div>
+
+                <div class="column has-text-centered">
+                  <div class="publication-links">
+                    <!-- PDF Link. -->
                     <span class="link-block">
-                      <a href="https://arxiv.org/abs/2303.08128" class="external-link button is-normal is-rounded is-dark">
+                      <a href="https://arxiv.org/pdf/2303.08128.pdf" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
-                        <i class="ai ai-arxiv"></i>
+                        <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>arXiv</span>
+                      <span>Paper</span>
                     </a>
                   </span>
-                  <!-- Code Link. -->
                   <span class="link-block">
-                    <a href="https://github.com/cvlab-columbia/viper" class="external-link button is-normal is-rounded is-dark">
+                    <a href="https://arxiv.org/abs/2303.08128" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                      <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>Code</span>
+                    <span>arXiv</span>
                   </a>
                 </span>
-              </div>
-  
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/cvlab-columbia/viper" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
             </div>
+
           </div>
         </div>
       </div>
     </div>
-  </section>
-  
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video id="teaser" autoplay="" muted="" loop="" playsinline="" height="100%" poster="./static/videos/teaser_web.png">
-          <source src="./static/videos/teaser_web.mp4" fetchpriority="high" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
-          <span class="vipergpt">ViperGPT</span> decomposes visual queries into interpretable steps.
-        </h2>
-      </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%" poster="./static/videos/teaser_web.png">
+        <source src="media/teaser_web.mp4" fetchpriority="high" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="vipergpt">ViperGPT</span> decomposes visual queries into interpretable steps.
+      </h2>
     </div>
-  </section>
-  
-  
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <!-- Abstract. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class=" title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              Existing volumetric methods for predicting 3D human pose estimation are accurate, 
-              but computationally expensive and optimized for single time-step prediction. 
-              We present TEMPO, an efficient multi-view pose estimation model that learns a 
-              robust spatiotemporal representation, improving pose accuracy while also tracking and 
-              forecasting human pose. We significantly reduce computation compared to the 
-              state-of-the-art by recurrently computing per-person 2D pose features, fusing 
-              both spatial and temporal information into a single representation. 
-              In doing so, our model is able to use spatiotemporal context to predict 
-              more accurate human poses without sacrificing efficiency. We further use 
-              this representation to track human poses over time as well as predict 
-              future poses. Finally, we demonstrate that our model is able to generalize 
-              across datasets without scene-specific fine-tuning. TEMPO achieves 10% better 
-              MPJPE with a 33x improvement in FPS compared to TesseTrack on the challenging
-            CMU Panoptic Studio dataset.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!--/ Abstract. -->
-  
-  <!-- <section class="section">
-    <div class="container is-max-desktop">
-                <div class="column interpolation-video-column">
-              <div id="interpolation-image-wrapper">
-                Loading...
-              </div>
-              <input class="slider is-fullwidth is-large is-info"
-                     id="interpolation-slider"
-                     step="1" min="0" max="6" value="0" type="range">
-            </div>
-      </div>
-    </section> -->
-  
-    <!-- Paper video. -->
-  <!--     <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class=" title is-3">Video</h2>
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div> -->
-      <!--/ Paper video. -->
-    </div>
-  </section>
-  
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <h2 class=" title is-3">How does it work?</h2>
-        <video controls="" height="100%" poster="./static/videos/viper_method.mp4">
-          <source src="./static/videos/viper_method.mp4#t=0.1" fetchpriority="high" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
-          A brief explanation of <span class="vipergpt">ViperGPT</span>.
-        </h2>
-      </div>
-    </div>
-  </section>
-  
-  <section class="section">
-    <div class="container is-max-desktop">
-  
-      <div class="columns is-centered">
-  
-        <!-- Logic. -->
-        <div class="column">
-          <div class="">
-            <h2 class=" title is-3">Logical Reasoning</h2>
-            <p>
-              <span class="vipergpt">ViperGPT</span> can perform logical operations because it directly executes Python code.
-            </p>
-          </div>
-  
-          <!-- Logic videos-->
-          <div class="child">
-            <div id="carouselExampleControls_logic" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleControls_logic" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleControls_logic" data-slide-to="1"></li>
-                <li data-target="#carouselExampleControls_logic" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner" data-wrap="false">
-                <div class="carousel-item active">
-                  <video preload="none" poster="./static/videos/logic/logic_1.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/logic/logic_1.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item" data-wrap="false">
-                  <video preload="none" poster="./static/videos/logic/logic_2.png" mutedloop="" playsinline="" height="100%">
-                    <source src="./static/videos/logic/logic_2.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item" data-wrap="false">
-                  <video poster="./static/videos/logic/logic_3.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/logic/logic_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls_logic" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls_logic" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Spatial understanding -->
-        <div class="column">
-          <h2 class=" title is-3">Spatial Understanding</h2>
-  
-          <div class="columns is-centered">
-            <div class="column">
-              <p>
-                We show <span class="vipergpt">ViperGPT</span>'s spatial understanding.
-              </p>
-            </div>
-          </div>
-  
-          <!-- Spatial Understanding videos. -->
-          <div class="child">
-            <div id="carouselExampleControls_spatial" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleControls_spatial" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleControls_spatial" data-slide-to="1"></li>
-                <li data-target="#carouselExampleControls_spatial" data-slide-to="2"></li>
-                <li data-target="#carouselExampleControls_spatial" data-slide-to="3"></li>
-                <li data-target="#carouselExampleControls_spatial" data-slide-to="4"></li>
-                <li data-target="#carouselExampleControls_spatial" data-slide-to="5"></li>
-                <li data-target="#carouselExampleControls_spatial" data-slide-to="6"></li>
-              </ol>
-              <div class="carousel-inner" data-wrap="false">
-                <div class="carousel-item active">
-                  <video preload="none" poster="./static/videos/spatial/second_left.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/spatial/second_left.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item">
-                  <video preload="none" poster="./static/videos/spatial/spatial_1.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/spatial/spatial_1.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item" data-wrap="false">
-                  <video preload="none" poster="./static/videos/spatial/spatial_2.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/spatial/spatial_2.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item" data-wrap="false">
-                  <video preload="none" poster="./static/videos/spatial/spatial_3.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/spatial/spatial_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item" data-wrap="false">
-                  <video preload="none" poster="./static/videos/spatial/pizza.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/spatial/pizza.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item" data-wrap="false">
-                  <video preload="none" poster="./static/videos/spatial/spatial_4.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/spatial/spatial_4.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item" data-wrap="false">
-                  <video preload="none" poster="./static/videos/spatial/spatial_5.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/spatial/spatial_5.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls_spatial" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls_spatial" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-  
-          </div>
-        </div>
-        <!--/ Spatial Understanding. -->
-      </div>
-  
-      <div class="columns is-centered">
-  
-        <!-- Knowledge. -->
-        <div class="column">
-          <div class="content">
-            <h2 class=" title is-3">Knowledge</h2>
-            <p>
-              <span class="vipergpt">ViperGPT</span> can access the knowledge of large language models.
-            </p>
-          </div>
-          <!-- Knowledge content. -->
-  
-          <div class="child parent_video_alone">
-            <video preload="none" poster="./static/videos/knowledge/drpepper_alcohol.png" id="chair-tp" muted="" loop="" playsinline="" height="100%" class="video_alone"> 
-              <source src="./static/videos/knowledge/drpepper_alcohol.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-  
-        <!-- Consistency. -->
-        <div class="column">
-          <h2 class=" title is-3">Consistency</h2>
-          <div class="columns is-centered">
-            <div class="column">
-              <p>
-                <span class="vipergpt">ViperGPT</span> answers similar questions with consistent reasoning.
-              </p>
-            </div>
-          </div>
-          <!-- Consistency content. -->
-          <div class="child">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              </ol>
-              <div class="carousel-inner" data-wrap="false">
-                <div class="carousel-item active">
-                  <video preload="none" poster="./static/videos/consistency/manhattan.png" id="chair-tp" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/consistency/manhattan.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item" data-wrap="false">
-                  <video preload="none" poster="./static/videos/consistency/euclidean.png" id="chair-tp" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/consistency/euclidean.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-        </div>
-  
-      </div>
-  
-  
-      <div class="columns is-centered ">
-  
-        <!-- Math. -->
-        <div class="column">
-          <div class="content">
-            <h2 class=" title is-3">Math</h2>
-            <p>
-              <span class="vipergpt">ViperGPT</span> can count, and divide. All using Python.
-            </p>
-          </div>
-          <!-- Math videos. -->
-          <div class="child parent_video_alone">
-            <video preload="none" poster="./static/videos/math/car_depreciation.png" id="chair-tp" muted="" loop="" playsinline="" height="100%" class="video_alone">
-              <source src="./static/videos/math/car_depreciation.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-  
-        <!-- Attributes. -->
-        <div class="column">
-          <div class="content">
-            <h2 class=" title is-3">Attributes</h2>
-            <p>
-              We show some <span class="vipergpt">ViperGPT</span> examples involving attributes.
-            </p>
-          </div>
-  
-          <!-- Attributes videos. -->
-          <div class="child">
-            <div id="carouselExampleControls2" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleControls2" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleControls2" data-slide-to="1"></li>
-                <li data-target="#carouselExampleControls2" data-slide-to="2"></li>
-                <li data-target="#carouselExampleControls2" data-slide-to="4"></li>
-                <li data-target="#carouselExampleControls2" data-slide-to="5"></li>
-              </ol>
-              <div class="carousel-inner" data-wrap="false">
-                <div class="carousel-item active">
-                  <video preload="none" poster="./static/videos/gqa/desk.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/gqa/desk.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item" data-wrap="false">
-                  <video preload="none" poster="./static/videos/refcoco/coco_cake.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/refcoco/coco_cake.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item" data-wrap="false">
-                  <video preload="none" poster="./static/videos/refcoco/white_clothing.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/refcoco/white_clothing.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item" data-wrap="false">
-                  <video preload="none" poster="./static/videos/relational/relational_4.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/relational/relational_4.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item">
-                  <video preload="none" poster="./static/videos/relational/relational_2.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/relational/relational_2.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-  
-          </div>
-        </div>
-      </div>
-  
-  
-      <div class="columns is-centered">
-  
-        <!-- Relational. -->
-        <div class="column">
-          <h2 class=" title is-3">Relational Reasoning</h2>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class=" title is-3">Abstract</h2>
+        <div class="content has-text-justified">
           <p>
-            Reasoning about relations.
+            Answering visual queries is a complex task that requires
+            both visual processing and reasoning. End-to-end models,
+            the dominant approach for this task, do not explicitly differentiate between the two, limiting interpretability and generalization. Learning modular programs presents a promising
+            alternative, but has proven challenging due to the difficulty
+            of learning both the programs and modules simultaneously.
+            We introduce <span class="vipergpt">ViperGPT</span>, a framework that leverages code-generation models to compose vision-and-language models
+            into subroutines to produce a result for any query. <span class="vipergpt">ViperGPT</span>
+            utilizes a provided API to access the available modules, and
+            composes them by generating Python code that is later executed. This simple approach requires no further training,
+            and achieves state-of-the-art results across various complex
+            visual tasks.
           </p>
-          <!-- Relational videos. -->
-          <div class="child">
-            <div id="carouselExampleControls_relation" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleControls_relation" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleControls_relation" data-slide-to="1"></li>
-                <li data-target="#carouselExampleControls_relation" data-slide-to="2"></li>
-                <li data-target="#carouselExampleControls_relation" data-slide-to="3"></li>
-              </ol>
-              <div class="carousel-inner" data-wrap="false">
-                <div class="carousel-item active" data-wrap="false">
-                  <video preload="none" poster="./static/videos/relational/relational_1.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/relational/relational_1.mp4" type="video/mp4">
-                  </video>
-                </div>
-                <div class="carousel-item" data-wrap="false">
-                  <video preload="none" poster="./static/videos/relational/relational_3.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/relational/relational_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-  
-                <div class="carousel-item" data-wrap="false">
-                  <video preload="none" poster="./static/videos/relational/relational_6.png" muted="" loop="" playsinline="" height="100%">
-                    <source src="./static/videos/relational/relational_6.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls_relation" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls_relation" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+              <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
             </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="6" value="0" type="range">
           </div>
+    </div>
+  </section> -->
+
+  <!-- Paper video. -->
+<!--     <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class=" title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
-  
-        <div class="column">
-          <h2 class=" title is-3">Negation</h2>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class=" title is-3">How does it work?</h2>
+      <video controls height="100%" poster="./static/videos/viper_method.mp4">
+        <source src="media/viper_method.mp4#t=0.1" fetchpriority="high" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        A brief explanation of <span class="vipergpt">ViperGPT</span>.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Logic. -->
+      <div class="column">
+        <div class>
+          <h2 class=" title is-3">Logical Reasoning</h2>
           <p>
-            Negation is programmatic, not neural.
+            <span class="vipergpt">ViperGPT</span> can perform logical operations because it directly executes Python code.
           </p>
-  
-          <!-- Negation videos. -->
-          <div class="child parent_video_alone">
-            <video preload="none" poster="./static/videos/negation/negation_2.png" muted="" loop="" playsinline="" height="100%" class="video_alone">
-              <source src="./static/videos/negation/negation_2.mp4" type="video/mp4">
-            </video>
+        </div>
+
+        <!-- Logic videos-->
+        <div class="child">
+          <div id="carouselExampleControls_logic" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleControls_logic" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleControls_logic" data-slide-to="1"></li>
+              <li data-target="#carouselExampleControls_logic" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" data-wrap="false">
+              <div class="carousel-item active">
+                <video preload="none" poster="./static/videos/logic/logic_1.png" muted loop playsinline height="100%">
+                  <source src="media/logic_1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item" data-wrap="false">
+                <video preload="none" poster="./static/videos/logic/logic_2.png" mutedloop playsinline height="100%">
+                  <source src="media/logic_2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item" data-wrap="false">
+                <video poster="./static/videos/logic/logic_3.png" muted loop playsinline height="100%">
+                  <source src="media/logic_3.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls_logic" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls_logic" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
         </div>
       </div>
-  
-      <div class="columns is-centered">
-        <div class="column">
-          <!--/ Temporal. -->
-          <h2 class=" title is-3">Temporal Reasoning</h2>
+
+      <!-- Spatial understanding -->
+      <div class="column">
+        <h2 class=" title is-3">Spatial Understanding</h2>
+
+        <div class="columns is-centered">
+          <div class="column">
+            <p>
+              We show <span class="vipergpt">ViperGPT</span>'s spatial understanding.
+            </p>
+          </div>
+        </div>
+
+        <!-- Spatial Understanding videos. -->
+        <div class="child">
+          <div id="carouselExampleControls_spatial" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleControls_spatial" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleControls_spatial" data-slide-to="1"></li>
+              <li data-target="#carouselExampleControls_spatial" data-slide-to="2"></li>
+              <li data-target="#carouselExampleControls_spatial" data-slide-to="3"></li>
+              <li data-target="#carouselExampleControls_spatial" data-slide-to="4"></li>
+              <li data-target="#carouselExampleControls_spatial" data-slide-to="5"></li>
+              <li data-target="#carouselExampleControls_spatial" data-slide-to="6"></li>
+            </ol>
+            <div class="carousel-inner" data-wrap="false">
+              <div class="carousel-item active">
+                <video preload="none" poster="./static/videos/spatial/second_left.png" muted loop playsinline height="100%">
+                  <source src="media/second_left.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item">
+                <video preload="none" poster="./static/videos/spatial/spatial_1.png" muted loop playsinline height="100%">
+                  <source src="media/spatial_1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item" data-wrap="false">
+                <video preload="none" poster="./static/videos/spatial/spatial_2.png" muted loop playsinline height="100%">
+                  <source src="media/spatial_2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item" data-wrap="false">
+                <video preload="none" poster="./static/videos/spatial/spatial_3.png" muted loop playsinline height="100%">
+                  <source src="media/spatial_3.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item" data-wrap="false">
+                <video preload="none" poster="./static/videos/spatial/pizza.png" muted loop playsinline height="100%">
+                  <source src="media/pizza.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item" data-wrap="false">
+                <video preload="none" poster="./static/videos/spatial/spatial_4.png" muted loop playsinline height="100%">
+                  <source src="media/spatial_4.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item" data-wrap="false">
+                <video preload="none" poster="./static/videos/spatial/spatial_5.png" muted loop playsinline height="100%">
+                  <source src="media/spatial_5.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls_spatial" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls_spatial" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+      <!--/ Spatial Understanding. -->
+    </div>
+
+    <div class="columns is-centered">
+
+      <!-- Knowledge. -->
+      <div class="column">
+        <div class="content">
+          <h2 class=" title is-3">Knowledge</h2>
           <p>
-            <span class="vipergpt">ViperGPT</span> can navigate through videos to understand them.
+            <span class="vipergpt">ViperGPT</span> can access the knowledge of large language models.
           </p>
-  
-          <!-- Temporal videos. -->
-          <div class="child parent_video_alone">
-            <video preload="none" poster="./static/videos/temporal/teacher.png" muted="" loop="" playsinline="" height="100%" class="video_alone">
-              <source src="./static/videos/temporal/teacher.mp4" type="video/mp4">
-            </video>
-          </div>
         </div>
-        <!--/ Some other section. -->
-        <div class="column">
+        <!-- Knowledge content. -->
+
+        <div class="child parent_video_alone">
+          <video preload="none" poster="./static/videos/knowledge/drpepper_alcohol.png" id="chair-tp" muted loop playsinline height="100%" class="video_alone"> 
+            <source src="media/drpepper_alcohol.mp4" type="video/mp4">
+          </video>
         </div>
-  
       </div>
-    </div>
-  
-  </section>
-  
-  
-  <section class="hero is-light is-small">
-    <div class="container">
-      <br>
-      <h2>More Results</h2>
-      <div id="video_results" class="container scrollable"><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_0.png"><source src="./static/videos/dump/example_0.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_1.png"><source src="./static/videos/dump/example_1.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_2.png"><source src="./static/videos/dump/example_2.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_3.png"><source src="./static/videos/dump/example_3.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_4.png"><source src="./static/videos/dump/example_4.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_5.png"><source src="./static/videos/dump/example_5.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_6.png"><source src="./static/videos/dump/example_6.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_7.png"><source src="./static/videos/dump/example_7.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_8.png"><source src="./static/videos/dump/example_8.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_9.png"><source src="./static/videos/dump/example_9.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_10.png"><source src="./static/videos/dump/example_10.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_11.png"><source src="./static/videos/dump/example_11.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_12.png"><source src="./static/videos/dump/example_12.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_13.png"><source src="./static/videos/dump/example_13.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_14.png"><source src="./static/videos/dump/example_14.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_15.png"><source src="./static/videos/dump/example_15.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_16.png"><source src="./static/videos/dump/example_16.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_17.png"><source src="./static/videos/dump/example_17.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_18.png"><source src="./static/videos/dump/example_18.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_19.png"><source src="./static/videos/dump/example_19.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_20.png"><source src="./static/videos/dump/example_20.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_21.png"><source src="./static/videos/dump/example_21.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_22.png"><source src="./static/videos/dump/example_22.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_23.png"><source src="./static/videos/dump/example_23.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_24.png"><source src="./static/videos/dump/example_24.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_25.png"><source src="./static/videos/dump/example_25.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_26.png"><source src="./static/videos/dump/example_26.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_27.png"><source src="./static/videos/dump/example_27.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_28.png"><source src="./static/videos/dump/example_28.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_29.png"><source src="./static/videos/dump/example_29.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_30.png"><source src="./static/videos/dump/example_30.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_31.png"><source src="./static/videos/dump/example_31.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_32.png"><source src="./static/videos/dump/example_32.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_33.png"><source src="./static/videos/dump/example_33.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_34.png"><source src="./static/videos/dump/example_34.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_35.png"><source src="./static/videos/dump/example_35.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_36.png"><source src="./static/videos/dump/example_36.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_37.png"><source src="./static/videos/dump/example_37.mp4" type="video/mp4"></video></div></div></div>
-      <br>
-    </div>
-  </section>
-  
-  
-  <section class="hero is-small">
-    <div class="container">
-      <br>
-      <h2>Related Work</h2>
-      <ul>
-        <li>• <a href="https://prior.allenai.org/projects/visprog">Visual Programming for Compositional Visual Reasoning</a></li>
-        <li>• <a href="https://arxiv.org/abs/2303.04671">Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models</a></li>
-        <li>• <a href="https://arxiv.org/abs/1511.02799">Neural Module Networks</a></li>
-        <li>• <a href="https://arxiv.org/abs/1705.03633">Inferring and Executing Programs for Visual Reasoning</a></li>
-        <li>• <a href="https://arxiv.org/abs/2211.10435">PAL: Program-aided Language Models</a></li>
-        <li>• <a href="https://arxiv.org/abs/2210.12810">Code4Struct: Code Generation for Few-Shot Structured Prediction from Natural Language</a></li>
-        <li>• <a href="https://arxiv.org/abs/2211.12588">Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks</a></li>
-        <li>• <a href="https://arxiv.org/abs/2302.04761">Toolformer: Language Models Can Teach Themselves to Use Tools</a></li>
-      </ul>
-    </div>
-  </section>
-  
-  
-  <section class="hero is-small" id="BibTeX">
-    <div class="container bibtex">
-      <h2>BibTeX</h2>
-      <div class="container is-max-desktop" style="margin-top:25px">
-        <pre class="columns "><code id="bibtex" class="column is-11">@article{surismenon2023vipergpt,
-          author    = {Sur\'is D\'idac and Menon, Sachit and Vondrick, Carl},
-          title     = {ViperGPT: Visual Inference via Python Execution for Reasoning},
-          journal   = {arXiv preprint arXiv:2303.08128},
-          year      = {2023},
-        }</code><button type="button" onclick="copyClipboard()" class="button-copy" title="Click to copy to clipboard"></button></pre>
-      </div>
-    </div>
-  </section>
-  
-  
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <a class="icon-link" href="./static/viper_paper.pdf">
-          <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
-        </a>
-        <a class="icon-link" href="https://github.com/cvlab-columbia/viper" disabled="">
-          <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
-        </a>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content acknowledgements">
+
+      <!-- Consistency. -->
+      <div class="column">
+        <h2 class=" title is-3">Consistency</h2>
+        <div class="columns is-centered">
+          <div class="column">
             <p>
-              We thank Revant Teotia and Chengzhi Mao for helpful feedback, as well as 3Blue1Brown and the Manim community for their wonderful visualization library.
-            </p>
-            <p>
-              This research is based on work partially supported by the DARPA MCS program under Federal Agreement No. N660011924032 and the NSF CAREER Award #2046910. DS is supported by the Microsoft PhD Fellowship and SM is supported by the NSF GRFP.
-            </p>
-            <p>
-              This webpage template was inspired by <a href="https://nerfies.github.io/">this</a> and <a href="https://hyperfuture.cs.columbia.edu">this</a> project pages.
+              <span class="vipergpt">ViperGPT</span> answers similar questions with consistent reasoning.
             </p>
           </div>
         </div>
+        <!-- Consistency content. -->
+        <div class="child">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner" data-wrap="false">
+              <div class="carousel-item active">
+                <video preload="none" poster="./static/videos/consistency/manhattan.png" id="chair-tp" muted loop playsinline height="100%">
+                  <source src="media/manhattan.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item" data-wrap="false">
+                <video preload="none" poster="./static/videos/consistency/euclidean.png" id="chair-tp" muted loop playsinline height="100%">
+                  <source src="media/euclidean.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="columns is-centered ">
+
+      <!-- Math. -->
+      <div class="column">
+        <div class="content">
+          <h2 class=" title is-3">Math</h2>
+          <p>
+            <span class="vipergpt">ViperGPT</span> can count, and divide. All using Python.
+          </p>
+        </div>
+        <!-- Math videos. -->
+        <div class="child parent_video_alone">
+          <video preload="none" poster="./static/videos/math/car_depreciation.png" id="chair-tp" muted loop playsinline height="100%" class="video_alone">
+            <source src="media/car_depreciation.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- Attributes. -->
+      <div class="column">
+        <div class="content">
+          <h2 class=" title is-3">Attributes</h2>
+          <p>
+            We show some <span class="vipergpt">ViperGPT</span> examples involving attributes.
+          </p>
+        </div>
+
+        <!-- Attributes videos. -->
+        <div class="child">
+          <div id="carouselExampleControls2" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleControls2" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleControls2" data-slide-to="1"></li>
+              <li data-target="#carouselExampleControls2" data-slide-to="2"></li>
+              <li data-target="#carouselExampleControls2" data-slide-to="4"></li>
+              <li data-target="#carouselExampleControls2" data-slide-to="5"></li>
+            </ol>
+            <div class="carousel-inner" data-wrap="false">
+              <div class="carousel-item active">
+                <video preload="none" poster="./static/videos/gqa/desk.png" muted loop playsinline height="100%">
+                  <source src="media/desk.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item" data-wrap="false">
+                <video preload="none" poster="./static/videos/refcoco/coco_cake.png" muted loop playsinline height="100%">
+                  <source src="media/coco_cake.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item" data-wrap="false">
+                <video preload="none" poster="./static/videos/refcoco/white_clothing.png" muted loop playsinline height="100%">
+                  <source src="media/white_clothing.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item" data-wrap="false">
+                <video preload="none" poster="./static/videos/relational/relational_4.png" muted loop playsinline height="100%">
+                  <source src="media/relational_4.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item">
+                <video preload="none" poster="./static/videos/relational/relational_2.png" muted loop playsinline height="100%">
+                  <source src="media/relational_2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+        </div>
       </div>
     </div>
-  </footer>
-  
-  
-  
-  <script>
-    var x ="", i;
-    for (i=0; i<19; i++) {
-      x = x + "<div class=\"row\" style=\"display: flex\">";
-      x = x + "<div class=\"col-md\" style=\" text-align:center;margin: 0px 30px;\">"
-      // if (i == 1){
-      //   x = x + "<p style=\" text-align:center\"><b>Finegym Examples</b></p>"
-      // }
-      x = x + "<video max-width=100\% class=\"videoscentered video_alone video_insert\" preload=\"none\" poster=\"./static/images/posters_dump/example_" + (2*i) + ".png\">"
-      x = x + "<source src=\"./static/videos/dump/example_" + 2*i + ".mp4\" type=\"video/mp4\"></video></div>"
-      // x = x + "<source src=\"./static/videos/dump/person_sunglasses.mp4\" type=\"video/mp4\"></video></div>"
-  
-      x = x + "<div class=\"col-md\" style=\" text-align:center;margin: 0px 30px;\">"
-      // if (i == 1){
-      //   x = x + "<p style=\" text-align:center\"><b>Hollywood2 Examples</b></p>"
-      // }
-      x = x + "<video class=\"videoscentered video_alone video_insert\" preload=\"none\" poster=\"./static/images/posters_dump/example_" + (2*i+1) + ".png\">"
-      x = x + "<source src=\"./static/videos/dump/example_" + (2*i+1) + ".mp4\" type=\"video/mp4\"></video></div>"
-  
-      x = x + "</div>"
-    }
-    document.getElementById("video_results").innerHTML = x;
-  
-  </script>
-  
-  <script>
-  
-    function copyClipboard() {
-    // Get the text field
-      var r = document.createRange();
-      r.selectNode(document.getElementById("bibtex"));
-      window.getSelection().removeAllRanges();
-      window.getSelection().addRange(r);
-      document.execCommand('copy');
-      window.getSelection().removeAllRanges();
-  
-    }
-  </script>
-  
-  <script>
-    document.getElementById('teaser').play();
-  </script>
-  
-  
-  </body></html>
+
+
+    <div class="columns is-centered">
+
+      <!-- Relational. -->
+      <div class="column">
+        <h2 class=" title is-3">Relational Reasoning</h2>
+        <p>
+          Reasoning about relations.
+        </p>
+        <!-- Relational videos. -->
+        <div class="child">
+          <div id="carouselExampleControls_relation" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleControls_relation" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleControls_relation" data-slide-to="1"></li>
+              <li data-target="#carouselExampleControls_relation" data-slide-to="2"></li>
+              <li data-target="#carouselExampleControls_relation" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" data-wrap="false">
+              <div class="carousel-item active" data-wrap="false">
+                <video preload="none" poster="./static/videos/relational/relational_1.png" muted loop playsinline height="100%">
+                  <source src="media/relational_1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="carousel-item" data-wrap="false">
+                <video preload="none" poster="./static/videos/relational/relational_3.png" muted loop playsinline height="100%">
+                  <source src="media/relational_3.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <div class="carousel-item" data-wrap="false">
+                <video preload="none" poster="./static/videos/relational/relational_6.png" muted loop playsinline height="100%">
+                  <source src="media/relational_6.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls_relation" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls_relation" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <h2 class=" title is-3">Negation</h2>
+        <p>
+          Negation is programmatic, not neural.
+        </p>
+
+        <!-- Negation videos. -->
+        <div class="child parent_video_alone">
+          <video preload="none" poster="./static/videos/negation/negation_2.png" muted loop playsinline height="100%" class="video_alone">
+            <source src="media/negation_2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <!--/ Temporal. -->
+        <h2 class=" title is-3">Temporal Reasoning</h2>
+        <p>
+          <span class="vipergpt">ViperGPT</span> can navigate through videos to understand them.
+        </p>
+
+        <!-- Temporal videos. -->
+        <div class="child parent_video_alone">
+          <video preload="none" poster="./static/videos/temporal/teacher.png" muted loop playsinline height="100%" class="video_alone">
+            <source src="media/teacher.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Some other section. -->
+      <div class="column">
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="container">
+    <br>
+    <h2>More Results</h2>
+    <div id="video_results" class="container scrollable"><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_0.png"><source src="media/example_0.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_1.png"><source src="media/example_1.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_2.png"><source src="media/example_2.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_3.png"><source src="media/example_3.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_4.png"><source src="media/example_4.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_5.png"><source src="media/example_5.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_6.png"><source src="media/example_6.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_7.png"><source src="media/example_7.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_8.png"><source src="media/example_8.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_9.png"><source src="media/example_9.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_10.png"><source src="media/example_10.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_11.png"><source src="media/example_11.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_12.png"><source src="media/example_12.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_13.png"><source src="media/example_13.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_14.png"><source src="media/example_14.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_15.png"><source src="media/example_15.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_16.png"><source src="media/example_16.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_17.png"><source src="media/example_17.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_18.png"><source src="media/example_18.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_19.png"><source src="media/example_19.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_20.png"><source src="media/example_20.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_21.png"><source src="media/example_21.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_22.png"><source src="media/example_22.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_23.png"><source src="media/example_23.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_24.png"><source src="media/example_24.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_25.png"><source src="media/example_25.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_26.png"><source src="media/example_26.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_27.png"><source src="media/example_27.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_28.png"><source src="media/example_28.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_29.png"><source src="media/example_29.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_30.png"><source src="media/example_30.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_31.png"><source src="media/example_31.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_32.png"><source src="media/example_32.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_33.png"><source src="media/example_33.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_34.png"><source src="media/example_34.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_35.png"><source src="media/example_35.mp4" type="video/mp4"></video></div></div><div class="row" style="display: flex"><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video max-width="100%" class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_36.png"><source src="media/example_36.mp4" type="video/mp4"></video></div><div class="col-md" style=" text-align:center;margin: 0px 30px;"><video class="videoscentered video_alone video_insert" preload="none" poster="./static/images/posters_dump/example_37.png"><source src="media/example_37.mp4" type="video/mp4"></video></div></div></div>
+    <br>
+  </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="container">
+    <br>
+    <h2>Related Work</h2>
+    <ul>
+      <li>• <a href="https://prior.allenai.org/projects/visprog">Visual Programming for Compositional Visual Reasoning</a></li>
+      <li>• <a href="https://arxiv.org/abs/2303.04671">Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models</a></li>
+      <li>• <a href="https://arxiv.org/abs/1511.02799">Neural Module Networks</a></li>
+      <li>• <a href="https://arxiv.org/abs/1705.03633">Inferring and Executing Programs for Visual Reasoning</a></li>
+      <li>• <a href="https://arxiv.org/abs/2211.10435">PAL: Program-aided Language Models</a></li>
+      <li>• <a href="https://arxiv.org/abs/2210.12810">Code4Struct: Code Generation for Few-Shot Structured Prediction from Natural Language</a></li>
+      <li>• <a href="https://arxiv.org/abs/2211.12588">Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks</a></li>
+      <li>• <a href="https://arxiv.org/abs/2302.04761">Toolformer: Language Models Can Teach Themselves to Use Tools</a></li>
+    </ul>
+  </div>
+</section>
+
+
+<section class="hero is-small" id="BibTeX">
+  <div class="container bibtex">
+    <h2>BibTeX</h2>
+    <div class="container is-max-desktop" style="margin-top:25px">
+      <pre class="columns "><code id="bibtex" class="column is-11">@article{surismenon2023vipergpt,
+        author    = {Sur\'is D\'idac and Menon, Sachit and Vondrick, Carl},
+        title     = {ViperGPT: Visual Inference via Python Execution for Reasoning},
+        journal   = {arXiv preprint arXiv:2303.08128},
+        year      = {2023},
+      }</code><button type="button" onclick="copyClipboard()" class="button-copy" title="Click to copy to clipboard"></button></pre>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="./static/viper_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/cvlab-columbia/viper" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content acknowledgements">
+          <p>
+            We thank Revant Teotia and Chengzhi Mao for helpful feedback, as well as 3Blue1Brown and the Manim community for their wonderful visualization library.
+          </p>
+          <p>
+            This research is based on work partially supported by the DARPA MCS program under Federal Agreement No. N660011924032 and the NSF CAREER Award #2046910. DS is supported by the Microsoft PhD Fellowship and SM is supported by the NSF GRFP.
+          </p>
+          <p>
+            This webpage template was inspired by <a href="https://nerfies.github.io/">this</a> and <a href="https://hyperfuture.cs.columbia.edu">this</a> project pages.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+  var x ="", i;
+  for (i=0; i<19; i++) {
+    x = x + "<div class=\"row\" style=\"display: flex\">";
+    x = x + "<div class=\"col-md\" style=\" text-align:center;margin: 0px 30px;\">"
+    // if (i == 1){
+    //   x = x + "<p style=\" text-align:center\"><b>Finegym Examples</b></p>"
+    // }
+    x = x + "<video max-width=100\% class=\"videoscentered video_alone video_insert\" preload=\"none\" poster=\"./static/images/posters_dump/example_" + (2*i) + ".png\">"
+    x = x + "<source src=\"./static/videos/dump/example_" + 2*i + ".mp4\" type=\"video/mp4\"></video></div>"
+    // x = x + "<source src=\"./static/videos/dump/person_sunglasses.mp4\" type=\"video/mp4\"></video></div>"
+
+    x = x + "<div class=\"col-md\" style=\" text-align:center;margin: 0px 30px;\">"
+    // if (i == 1){
+    //   x = x + "<p style=\" text-align:center\"><b>Hollywood2 Examples</b></p>"
+    // }
+    x = x + "<video class=\"videoscentered video_alone video_insert\" preload=\"none\" poster=\"./static/images/posters_dump/example_" + (2*i+1) + ".png\">"
+    x = x + "<source src=\"./static/videos/dump/example_" + (2*i+1) + ".mp4\" type=\"video/mp4\"></video></div>"
+
+    x = x + "</div>"
+  }
+  document.getElementById("video_results").innerHTML = x;
+
+</script>
+
+<script>
+
+  function copyClipboard() {
+  // Get the text field
+    var r = document.createRange();
+    r.selectNode(document.getElementById("bibtex"));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+
+  }
+</script>
+
+<script>
+  document.getElementById('teaser').play();
+</script>
+
+
+</body></html>

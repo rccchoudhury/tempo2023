@@ -1,0 +1,242 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.acknowledgements {
+  font-size: 14px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.child {
+    margin-top: auto;
+}
+
+.parent_video_alone {
+  margin-bottom: -5.86px;
+}
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-equal {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.vipergpt {
+  color: #00A552;
+  font-family: 'Courier', sans-serif;
+  font-stretch: condensed;
+  font-size: 120%;
+}
+
+.description {
+  margin-bottom: -25px!important;
+}
+
+.title {
+  margin-bottom: 10px!important;
+}
+
+.button-copy{
+  background-image: url("../fonts/copy-icon.svg");
+  background-size:100% 100%;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border: 0;
+    transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+.button-copy:hover{
+   border: 1px solid #888;
+  background-color: #ddd;
+  }
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+.video_alone {cursor : pointer;}
+.carousel-item {cursor : pointer;}
+
+@media (hover: hover) {  /*Only apply this for mouse (not phone where hover is not a thing)*/
+.video_alone:hover {outline: 4px dashed green; outline-offset: 1px;}
+.carousel-inner:hover {outline: 4px dashed green; outline-offset: 1px;}
+.carousel-item {margin-bottom: -5.86px}
+}
+
+/*video:hover { border : 3px dashed #00a613; }*/
+/*video:hover {box-shadow: 5px 5px #00a613;}*/
+
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel_short {
+  overflow: hidden;
+}
+  .carousel-indicators li {
+    height: 10px!important;;
+    width: 10px!important;;
+    border-radius: 50%;
+  }
+.publication-body img {
+}
+
+.bibtex{
+  margin-top: 25px!important;
+  margin-bottom: 30px!important;
+}
+
+.scrollable {
+  height: 800px; /* or any value */
+  overflow-y: auto;
+  margin-right: auto;
+  background-color: white;
+  /*box-shadow: #254C5833 10px 10px;*/
+  border: #00A652 3px solid; 
+  /*padding: 10px 10px 10px 10px;*/
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
