@@ -60,17 +60,16 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class=" title is-1 publication-title"><span class="vipergpt">ViperGPT</span>: Visual Inference via Python Execution for Reasoning</h1>
+            <h1 class=" title is-1 publication-title"><span class="tempo">TEMPO</span>: Efficient Multi-View Pose Estimation, Tracking, and Forecasting</h1>
             <div class="is-size-3 publication-authors">
               <span class="author-block" id="author1">
                 <a Rohan Choudhury</a><sup>*</sup>,</span>
-                <span class="author-block" id="author2">
-                  <a href="https://www.laszlojeni.com//">László A. Jeni</a><sup>*</sup>,</span>
                   <span class="author-block">
-                    <a href="https://kriskitani.github.io/">Kris M. Kitnai</a>
+                  <a href="https://kriskitani.github.io/">Kris M. Kitani</a>
                   </span>
+                  <span class="author-block" id="author2">
+                  <a href="https://www.laszlojeni.com//">László A. Jeni</a><sup>*</sup>,</span>
                 </div>
-
                 <div class="is-size-5 publication-equal">
                   <span class="author-block"><sup>*</sup>Equal contribution</span>
                 </div>
@@ -137,17 +136,25 @@
         <h2 class=" title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Answering visual queries is a complex task that requires
-            both visual processing and reasoning. End-to-end models,
-            the dominant approach for this task, do not explicitly differentiate between the two, limiting interpretability and generalization. Learning modular programs presents a promising
-            alternative, but has proven challenging due to the difficulty
-            of learning both the programs and modules simultaneously.
-            We introduce <span class="vipergpt">ViperGPT</span>, a framework that leverages code-generation models to compose vision-and-language models
-            into subroutines to produce a result for any query. <span class="vipergpt">ViperGPT</span>
-            utilizes a provided API to access the available modules, and
-            composes them by generating Python code that is later executed. This simple approach requires no further training,
-            and achieves state-of-the-art results across various complex
-            visual tasks.
+              Existing volumetric methods for predicting 3D human
+              pose estimation are accurate, but computationally expen-
+              sive and optimized for single time-step prediction. We
+              present <span class="tempo">TEMPO</span>, an efficient multi-view pose estimation
+              model that learns a robust spatiotemporal representation,
+              improving pose accuracy while also tracking and forecast-
+              ing human pose. We significantly reduce computation com-
+              pared to the state-of-the-art by recurrently computing per-
+              person 2D pose features, fusing both spatial and temporal
+              information into a single representation. In doing so, our
+              model is able to use spatiotemporal context to predict more
+              accurate human poses without sacrificing efficiency. We
+              further use this representation to track human poses over
+              time as well as predict future poses. Finally, we demon-
+              strate that our model is able to generalize across datasets
+              without scene-specific fine-tuning. <span class="tempo">TEMPO</span> achieves 10%
+              better MPJPE with a 33x improvement in FPS compared
+              to TesseTrack on the challenging CMU Panoptic Studio
+              dataset.
           </p>
         </div>
       </div>
