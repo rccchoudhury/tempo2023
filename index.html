@@ -129,21 +129,13 @@
         <h2 class=" title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-              Existing volumetric methods for predicting 3D human
-              pose estimation are accurate, but computationally expensive and optimized for single time-step prediction. We
-              present <span class="tempo">TEMPO</span>, an efficient multi-view pose estimation
-              model that learns a robust spatiotemporal representation,
-              improving pose accuracy while also tracking and forecasting human pose. We significantly reduce computation com-
-              pared to the state-of-the-art by recurrently computing per-person 2D pose features, fusing both spatial and temporal
-              information into a single representation. In doing so, our
-              model is able to use spatiotemporal context to predict more
-              accurate human poses without sacrificing efficiency. We
-              further use this representation to track human poses over
-              time as well as predict future poses. Finally, we demonstrate that our model is able to generalize across datasets
+              Existing volumetric methods for predicting 3D human pose estimation are accurate, but computationally expensive and optimized for single time-step prediction. We
+              present <span class="tempo">TEMPO</span>, an efficient multi-view pose estimation model that learns a robust spatiotemporal representation,
+              improving pose accuracy while also tracking and forecasting human pose. We significantly reduce computation compared to the state-of-the-art by recurrently computing per-person 2D pose features, fusing both spatial and temporal
+              information into a single representation. In doing so, our model is able to use spatiotemporal context to predict more
+              accurate human poses without sacrificing efficiency. We further use this representation to track human poses over time as well as predict future poses. Finally, we demonstrate that our model is able to generalize across datasets
               without scene-specific fine-tuning. <span class="tempo">TEMPO</span> achieves 10%
-              better MPJPE with a 33x improvement in FPS compared
-              to TesseTrack on the challenging CMU Panoptic Studio
-              dataset.
+              better MPJPE with a 33x improvement in FPS compared to TesseTrack on the challenging CMU Panoptic Studio dataset.
           </p>
         </div>
       </div>
@@ -192,8 +184,8 @@
 
 <style>
   .image_alone {
-    width: 100%;
-    height: 100%;
+    width: 300%;
+    height: 300%;
       object-fit: cover;
   }
 </style>
@@ -216,14 +208,6 @@
           <source src="./media/vis_haggling.mp4" type="video/mp4">
         </video>
         <p>Sample results for Haggling sequence.</p>
-      </div>
-    </div>
-    <div class="video-row">
-      <div class="video-column">
-        <video preload="none" poster="" muted="" loop="" playsinline="" height="100%" class="video_alone">
-          <source src="./media/vis_band.mp4" type="video/mp4">
-        </video>
-        <p>Sample results for Band sequence.</p>
       </div>
       <div class="video-column">
         <video preload="none" poster="" muted="" loop="" playsinline="" height="100%" class="video_alone">
@@ -253,9 +237,6 @@
     height: auto;
   }
 </style>
-
-
-
 
 <section class="hero is-small">
   <div class="container">
