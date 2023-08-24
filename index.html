@@ -199,22 +199,55 @@
   <div class="container">
     <br>
     <h2>Sample Results</h2>
-    <div class="column is-3 has-text-centered">
-      <video preload="none" poster="" id="chair-tp" muted="" loop="" playsinline="" height="100%" class="video_alone"> 
-        <source src="./media/vis_pizza.mp4" type="video/mp4">
-      </video>
-      <p>Sample results on the Panoptic studio Pizza sequence .</p> 
+    <div class="video-row">
+      <div class="video-column">
+        <video preload="none" poster="" muted="" loop="" playsinline="" height="100%" class="video_alone">
+          <source src="./media/vis_pizza.mp4" type="video/mp4">
+        </video>
+        <p>Sample results for video A.</p>
+      </div>
+      <div class="video-column">
+        <video preload="none" poster="" muted="" loop="" playsinline="" height="100%" class="video_alone">
+          <source src="./media/vis_haggling.mp4" type="video/mp4">
+        </video>
+        <p>Sample results for video B.</p>
+      </div>
     </div>
-    <div class="column is-3 has-text-centered">
-      <video preload="none" poster="" id="chair-tp" muted="" loop="" playsinline="" height="100%" class="video_alone"> 
-        <source src="./media/vis_haggling.mp4" type="video/mp4">
-      </video>
-      <p>Sample results on the Panoptic studio Haggling sequence .</p> 
+    <div class="video-row">
+      <div class="video-column">
+        <video preload="none" poster="" muted="" loop="" playsinline="" height="100%" class="video_alone">
+          <source src="./media/vis_band.mp4" type="video/mp4">
+        </video>
+        <p>Sample results for video C.</p>
+      </div>
+      <div class="video-column">
+        <video preload="none" poster="" muted="" loop="" playsinline="" height="100%" class="video_alone">
+          <source src="./media/vis_ian.mp4" type="video/mp4">
+        </video>
+        <p>Sample results for video D.</p>
+      </div>
     </div>
-
     <br>
   </div>
 </section>
+
+<style>
+  .video-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .video-column {
+    flex: 1;
+    margin: 0 5px;
+    text-align: center;
+  }
+
+  .video_alone {
+    width: 100%;
+    height: auto;
+  }
+</style>
 
 
 
