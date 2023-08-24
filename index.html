@@ -180,7 +180,10 @@
       </p>
       <div style="margin-top: 50px;"> <!-- Adding some vertical space between images -->
         <img src="./static/images/temporal_arch.png" class="image_alone" alt="TEMPO main architecture.">
-        <p>Previous methods that used temporal information were prohibitively slow to run. By using a tracker and recurrent network, we can re-use prior features to efficiently predict current and future poses.</p>
+        <p>A closer look at the temporal representation used by our model. We first project the feature volume to each of the three planes, 
+          and concatenate the projections channel-wise. We pass this feature map through an encoder network. We use this feature encoding as input to the SpatialGRU module, 
+          using the spatially warped pose feature from the previous timestep as a hidden state. We use the SpatialGRU module to produce 
+          features at the current and future timesteps, which we decode into human poses with the pose decoder network.</p>
       </div>
     </div>
     <br>
