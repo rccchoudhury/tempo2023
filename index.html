@@ -206,30 +206,27 @@
     object-fit: cover;
   }
 </style>
-
 <section class="hero is-light is-small">
   <div class="container">
     <br>
     <h2>Sample Results</h2>
-    We present some sample video results on the Panoptic Studio dataset. Click the thumbnails to play the videos.
-    <div class="video-row">
-      <div class="video-column">
-        <video preload="none" poster="./static/images/pizza_thumbnail.png" muted="" loop="" playsinline="" height="100%" class="video_alone">
-          <source src="./media/vis_pizza.mp4" type="video/mp4">
-        </video>
-        <p>Sample results for the Pizza sequence.</p>
+    We present some sample video results on YouTube. Click the thumbnails to play the videos.
+    <div class="video-grid">
+      <div class="video-cell">
+        <iframe width="100%" height="100%" src="https://youtu.be/4ln80B9DYV8" frameborder="0" allowfullscreen></iframe>
+        <p>Sample results for Video 1.</p>
       </div>
-      <div class="video-column">
-        <video preload="none" poster="./static/images/haggling_thumbnail.png" muted="" loop="" playsinline="" height="100%" class="video_alone">
-          <source src="./media/vis_haggling.mp4" type="video/mp4">
-        </video>
-        <p>Sample results for the Haggling sequence.</p>
+      <div class="video-cell">
+        <iframe width="100%" height="100%" src="https://youtu.be/dvxigx6hAhI" frameborder="0" allowfullscreen></iframe>
+        <p>Sample results for Video 2.</p>
       </div>
-      <div class="video-column">
-        <video preload="none" poster="./static/images/thumbnail_ian.png" muted="" loop="" playsinline="" height="100%" class="video_alone">
-          <source src="./media/vis_ian.mp4" type="video/mp4">
-        </video>
-        <p>Sample results for the Ian sequence.</p>
+      <div class="video-cell">
+        <iframe width="100%" height="100%" src="https://youtu.be/eQ6asDwxI0E" frameborder="0" allowfullscreen></iframe>
+        <p>Sample results for Video 3.</p>
+      </div>
+      <div class="video-cell">
+        <iframe width="100%" height="100%" src="https://youtu.be/_en9I8Euu-Q" frameborder="0" allowfullscreen></iframe>
+        <p>Sample results for Video 4.</p>
       </div>
     </div>
     <br>
@@ -237,22 +234,23 @@
 </section>
 
 <style>
-  .video-row {
-    display: flex;
-    justify-content: space-between;
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
-  .video-column {
-    flex: 1;
-    margin: 0 5px;
+  .video-cell {
+    margin: 5px;
     text-align: center;
   }
 
-  .video_alone {
+  iframe {
     width: 100%;
     height: auto;
   }
 </style>
+
 
 <section class="hero is-small">
   <div class="container">
