@@ -169,34 +169,18 @@
   </div>
 </section>
 
-<section class="hero is-small">
-  <div class="container">
-    <br>
-    <h2>How does it work?</h2>
-    <div style="text-align: center;">
-      <img src="./static/images/iccv_main_arch_v7.png" class="image_alone" alt="TEMPO main architecture.">
-      <p>We begin by (1) extracting features from each image with the backbone network and unprojecting those features to a 3D volume. In step (2), we use the volume to detect each person in the scene,
-         and (3) associate the detections from the current timestep to the previous one. We then (4) fuse the features from each person with our temporal model and produce a final pose estimate.
-      </p>
-      <div style="margin-top: 50px;"> <!-- Adding some vertical space between images -->
-        <img src="./static/images/temporal_arch.png" class="image_alone" alt="TEMPO main architecture.">
-        <p>A closer look at the temporal representation used by our model. We first project the feature volume to each of the three planes, 
-          and concatenate the projections channel-wise. We pass this feature map through an encoder network. We use this feature encoding as input to the SpatialGRU module, 
-          using the spatially warped pose feature from the previous timestep as a hidden state. We use the SpatialGRU module to produce 
-          features at the current and future timesteps, which we decode into human poses with the pose decoder network.</p>
-      </div>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3">How does it work?</h2>
+      <!-- Embed YouTube video -->
+      <iframe width="840" height="473" src="https://www.youtube.com/embed/jxmBQqmVkIw?si=nhVfaUs4fw1m6gtN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <h2 class="subtitle has-text-centered">
+        A brief explanation of <span class="tempo">TEMPO</span>.
+      </h2>
     </div>
-    <br>
   </div>
 </section>
-
-<style>
-  .image_alone {
-    width: 65%;
-    height: 65%;
-    object-fit: cover;
-  }
-</style>
 
 
 <style>
